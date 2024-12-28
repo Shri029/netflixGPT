@@ -6,7 +6,12 @@
     - npx tailwindcss init
 - React Router DOM
     - npm i react-router-dom
-
+- Header
+- Routing 
+- Login Form
+- Sign up form
+- Form Validation
+- useRef Hook
 
 ...
 
