@@ -20,6 +20,12 @@
 - Implemented Sign Out
 - Update Profile
 - Fetch from TMDB movies
+- BugFix: Sign up user displayName and profile picture update
+- BugFix: Redirect to login page/browse only if the user is not logged in and vice-versa
+- Unsubscribe to on Auth state change callback
+ when component unscuscribe
+ - Add hardcoded value to constant file
+ - Register for API and create an App & get access token
 
 ...
 
