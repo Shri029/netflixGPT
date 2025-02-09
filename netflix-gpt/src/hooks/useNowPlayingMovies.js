@@ -9,9 +9,9 @@ const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
   const getNowPlayingMovies = async () =>{
     const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', API_OPTIONS);
-    const results = await data.json();
-    console.log("Data: ",results);
-    dispatch(addNowPlayingMovies(results));
+    const dataJson = await data.json();
+    console.log("Data: ",dataJson.results);
+    dispatch(addNowPlayingMovies(dataJson.results));
   }
 
   useEffect(()=>{
