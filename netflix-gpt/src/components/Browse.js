@@ -1,21 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './Header';
-import { API_OPTIONS } from '../utils/constant';
+import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
+import MainContainer from './MainContainer';
+import SecondaryContainer from './SecondaryContainer';
 
 const Browse = () => {
-  
-  const getMovies = async () =>{
-    // const data = await fetch('https://www.omdbapi.com/?s=you&apikey=60ffafa9');
-     const data = await fetch('https://api.themoviedb.org/3/movie/now_playing' + API_OPTIONS);
-    const results = await data.json();
-    console.log("Data: ");
-  }
-
-  useEffect(()=>{
-    getMovies();
-  },[]);
+  useNowPlayingMovies();
   return (
-    <div><Header/></div>
+    <div>
+      <Header/>
+      <MainContainer/>
+      <SecondaryContainer/>
+      {
+        /*         
+          MainContainer
+            - VideoBackground
+            - VideoTitle
+          SecondaryContainer
+            - MovieList
+            - Cards * n  
+          */
+
+        
+      }
+    </div>
   )
 }
 

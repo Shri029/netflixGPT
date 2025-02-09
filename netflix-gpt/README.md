@@ -26,6 +26,8 @@
  when component unscuscribe
  - Add hardcoded value to constant file
  - Register for API and create an App & get access token
+ - Get data from TMDB now playing movies list API
+ 
 
 ...
 
