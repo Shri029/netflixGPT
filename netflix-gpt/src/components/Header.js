@@ -28,7 +28,6 @@ const Header = () => {
         } else {
           dispatch(removeUser());
           navigate("/");
-          console.log("Logged out");
         }
       });
 

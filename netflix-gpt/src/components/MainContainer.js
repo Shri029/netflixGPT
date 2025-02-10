@@ -11,7 +11,6 @@ const MainContainer = () => {
 
   //Main movie- first movie of the list
   const mainMovie = movies[0];
-  console.log("Main movie", mainMovie);
 
   const { original_title, overview, id } = mainMovie;
 

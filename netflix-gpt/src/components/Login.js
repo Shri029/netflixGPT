@@ -22,9 +22,6 @@ const Login = () => {
 
   const handleButtonClick = () => {
     //validate from data
-    console.log(email.current.value);
-    console.log(password.current.value);
-
     const message = checkValidateData(email.current.value, password.current.value);
     setErrorMessage(message);
 
@@ -53,7 +50,6 @@ const Login = () => {
         }).catch((error) => {
           setErrorMessage(error.message)
         });
-        console.log("Logged in",user);
 
       })
       .catch((error) => {
@@ -70,7 +66,6 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in 
         // navigate("/browse");
-        console.log("Signed In");
         const user = userCredential.user;
       })
       .catch((error) => {
@@ -81,7 +76,6 @@ const Login = () => {
     }
 
     //Sign In Sign up logic
-    console.log(message);
   }
   return (
     <div>
