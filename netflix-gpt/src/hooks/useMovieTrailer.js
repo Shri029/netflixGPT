@@ -3,8 +3,7 @@ import { useDispatch } from 'react-redux';
 import { API_OPTIONS } from '../utils/constant';
 import { addTrailerVideo } from '../utils/movies';
 
-const useMovieTrailer = ({movieId}) => {
-
+const useMovieTrailer = (movieId) => {
     const dispatch = useDispatch();  
     // fetch trailer videos and updating store with trailervideodata
     const getMovieVideos = async () =>{
