@@ -35,6 +35,13 @@
  - Update Store with Trailer video data
  - Embedded the Youtube video and make it autoply & mute
  - Tailwind Classes to make main container look awesome
+ - Build secondary Component
+ - Build Movie List
+ - Build Movie Card
+ - TMDB Image CDN URL
+ - Made browse page amazing with Tailwind CSS
+ - usePopularMovies Custom Hook 
+
  
 
 ...
