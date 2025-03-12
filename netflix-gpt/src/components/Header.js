@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png';
 import User_Avatar from '../assets/User_Avatar.jpg';
 import { signOut } from "firebase/auth";
@@ -7,15 +8,30 @@ import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser} from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
+import { toggleGptSearchView } from '../utils/gptSlice';
+import { SUPPORTED_LANGUAGES } from '../utils/constant';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector(store => store.gpt.showGptSearch);
+
   const handleSignout = () =>{
     signOut(auth)
      .then(() => {}).catch((error) => {
       // An error happened.
     });
+  }
+  const handleGptSearchClick = () =>{
+    // Toggle GPT Search
+    dispatch(toggleGptSearchView());
+  }
+
+  const handleLanguageChange = (e) => {
+    console.log("Selected language", e.target.value);
+    dispatch(changeLanguage(e.target.value));
   }
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -41,14 +57,21 @@ const Header = () => {
           alt="logo" 
           src={Netflix_Logo_PMS}
         />
-        <div className='flex p-2'>
+        {user && (
+          <div className='flex p-2'>
+            {showGptSearch &&(
+              <select className='p-2 m-2 bg-gray-900 text-white rounded-lg' onChange={handleLanguageChange}>
+              {SUPPORTED_LANGUAGES.map((lang) => <option value={lang.identifier}>{lang.name}</option>)}
+              </select>
+            )}
+          <button className='py-2 px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
           <img 
             className='w-12 h-12'
             alt="usericon"          
             src={User_Avatar}
           />
           <button onClick={handleSignout} className='font-bold text-white'>(Sign Out)</button>
-        </div>
+        </div>)}
     </div>
   )
 }
