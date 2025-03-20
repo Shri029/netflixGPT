@@ -44,6 +44,8 @@
  - GPT Search Page
  - GPT Search Bar
  - (BONUS) Multilingual feature
+ - Movie name recommendation using Gemini AI
+ - Getting movie details through TMDB
 
  
 
