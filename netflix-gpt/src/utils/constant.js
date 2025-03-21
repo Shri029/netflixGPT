@@ -12,8 +12,15 @@ export const API_OPTIONS = {
 
   export const BG_URL= "https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/19fc1a4c-82db-4481-ad08-3a1dffbb8c39/IN-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_24a485f6-1820-42be-9b60-1b066f1eb869_small.jpg";
 
+  export const BG_URL1= 'https://assets.nflxext.com/ffe/siteui/vlv3/42a0bce6-fc59-4c1c-b335-7196a59ae9ab/web_auto_scroll/IN-en-20250303-TRIFECTA-5a51a3d1-4e37-441d-bc08-3597ab68c7b1_large.jpg';
+
   export const SUPPORTED_LANGUAGES = [
     {identifier: "en",name: "English"},
     {identifier: "hindi",name: "Hindi"},
     {identifier: "spanish",name: "Spanish"},
-  ]
+  ];
+
+  export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+
+  export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+  ;

@@ -55,12 +55,13 @@ const GptSearchBar = () => {
           return;
         }
     
+        // const moviesArray = ['Angoor, Chupke Chupke, Gol Maal, Padosan, Bawarchi'].split(",").map(movie => movie.trim());
         const moviesArray = movieResults.split(",").map(movie => movie.trim());  // Trim each movie name
         const promiseArray = moviesArray.map(movie => searchMovieTMDB(movie));
     
         //Promise fro all movie names
         const tmdbResults = await Promise.all(promiseArray);
-        dispatch(addGptMovieResults({ movieNames: movieResults, movieResults: tmdbResults }));
+        dispatch(addGptMovieResults({ movieNames: moviesArray, movieResults: tmdbResults }));
         console.log("Movie data from TMDB:", tmdbResults);
       } catch (error) {
         console.error("Error fetching movies or TMDB data:", error);
@@ -69,8 +70,8 @@ const GptSearchBar = () => {
   return (
     <div className='pt-[10%] flex justify-center'>
         <form className='w-1/2 bg-black grid grid-cols-12' onSubmit={(e)=>e.preventDefault()}>
-            <input ref={searchText} type="text" className='p-4 m-4 col-span-9' placeholder={lang[langKey].gptSearchPlaceholder}/>
-            <button onClick={handleGptSearchClick} className='py-2 px-4 m-4 bg-red-700 text-white rounded-lg col-span-3'>{lang[langKey].search}</button>
+            <input ref={searchText} type="text" className='p-3 m-4 col-span-9' placeholder={lang[langKey].gptSearchPlaceholder}/>
+            <button onClick={handleGptSearchClick} className='py-2 px-3 m-4 bg-red-700 text-white rounded-lg col-span-3'>{lang[langKey].search}</button>
         </form>
     </div>
   )

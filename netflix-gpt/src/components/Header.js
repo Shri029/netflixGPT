@@ -64,7 +64,7 @@ const Header = () => {
               {SUPPORTED_LANGUAGES.map((lang) => <option value={lang.identifier}>{lang.name}</option>)}
               </select>
             )}
-          <button className='py-2 px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
+          <button className='py-2 px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "AI Recommendation"}</button>
           <img 
             className='w-12 h-12'
             alt="usericon"          
