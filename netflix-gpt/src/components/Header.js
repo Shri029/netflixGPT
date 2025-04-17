@@ -66,11 +66,11 @@ const Header = () => {
             )}
           <button className='py-2 px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "AI Recommendation"}</button>
           <img 
-            className='w-12 h-12 rounded-lg m-2'
+            className='w-12 h-12'
             alt="usericon"          
             src={User_Avatar}
           />
-          <button onClick={handleSignout} className='font-bold text-white font-sm border-purple-800 border-2 p-2 m-2 rounded-lg'>(Sign Out)</button>
+          <button onClick={handleSignout} className='font-bold text-white'>(Sign Out)</button>
         </div>)}
     </div>
   )
