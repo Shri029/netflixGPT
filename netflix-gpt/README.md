@@ -1,8 +1,7 @@
 # Netflix GPT
 
 Demo-1
-https://github.com/user-attachments/assets/41f1f326-87b8-4b03-95a0-f791971090ea
-
+![Image]([https://github.com/username/repo/assets/12345678/file.png](https://github.com/user-attachments/assets/41f1f326-87b8-4b03-95a0-f791971090ea))
 
 - Create React App
 - Configured Tailwind CSS
