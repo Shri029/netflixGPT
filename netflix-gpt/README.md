@@ -1,5 +1,9 @@
 # Netflix GPT
 
+Demo-1
+https://github.com/user-attachments/assets/41f1f326-87b8-4b03-95a0-f791971090ea
+
+
 - Create React App
 - Configured Tailwind CSS
     - npm i -D tailwindcss
